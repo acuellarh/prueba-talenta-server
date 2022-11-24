@@ -10,12 +10,7 @@ const app = express();
 app.use(express.json());
 app.use(cors());
 
-app.use("/api/infoTexts", infoTextsRoutes)
-
-app.get("/ping", (_req, res) => {
-  console.log("Hola Mundo otra vez")
-  res.send("Hello Alejo")
-})
+app.use("/api/infoTexts", infoTextsRoutes);
 
 
 
