@@ -43,10 +43,10 @@ const postInfoTexts = (req, res) => {
         }
         const newInfoText = {
             id: new Date().valueOf(),
-            text: dataText
+            dataText: dataText
         };
         arrayInfoTexts.push(newInfoText);
-        res.status(200).json(arrayInfoTexts);
+        res.status(200).json(newInfoText);
     }
     catch (error) {
         console.log(error);
@@ -62,7 +62,7 @@ const putInfoText = (req, res) => {
     try {
         arrayInfoTexts = arrayInfoTexts.map((item) => {
             if (item.id === id) {
-                item.text = dataText;
+                item.dataText = dataText;
                 return item;
             }
             return item;

@@ -12,8 +12,7 @@ export const getInfoTexts = (req: Request, res: Response) => {
       res.status(500).json({
         msg: "Validar con el administrador" 
       })     
-  }
-  
+  }  
 };
 
 export const getInfoText = (req: Request, res: Response) => {
@@ -29,15 +28,13 @@ export const getInfoText = (req: Request, res: Response) => {
     
     res.status(400).json({
       msg: "Elemento no encontrado"
-    })
-    
+    })    
     
   } catch (error) {
     console.log(error);
       res.status(500).json({
         msg: "Validar con el administrador" 
-    })  
-    
+    })    
   }  
 };
 
@@ -54,11 +51,11 @@ export const postInfoTexts = (req: Request, res: Response ) => {
 
     const newInfoText = {
       id: new Date().valueOf(),
-      text: dataText
+      dataText: dataText
     }
     arrayInfoTexts.push(newInfoText)
 
-    res.status(200).json(arrayInfoTexts);    
+    res.status(200).json(newInfoText);    
     
   } catch (error) {
       console.log(error);
@@ -77,7 +74,7 @@ export const putInfoText = (req: Request, res: Response) => {
   try {
     arrayInfoTexts = arrayInfoTexts.map((item) => {
      if(item.id === id) {
-      item.text = dataText     
+      item.dataText = dataText     
        return item
      }
      return item         
